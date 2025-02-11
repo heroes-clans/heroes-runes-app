@@ -303,7 +303,37 @@
         100% {
             filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
         }
-    }  
+    } 
+        
+        .new-badge {
+    position: absolute;
+    transform: rotate(-15deg);
+    color: #ff0000;
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: breathe 2s ease-in-out infinite;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+    margin-left: 0.5rem;
+}
+
+@keyframes breathe {
+    0% {
+        transform: rotate(-15deg) scale(1);
+    }
+    50% {
+        transform: rotate(-15deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(-15deg) scale(1);
+    }
+}
+
+.button-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+        
                                  
     </style>
 </head>
@@ -318,7 +348,7 @@
                     <h1 class="title-big mb-8 title-glow">HEROES CLANS</h1>
                     <p class="text-lg mb-8">Los powerups de esta temporada</p>
                     <a href="#catalog" class="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 transition duration-300">
-                        VER RUNAS
+                       <span class="new-badge">NEW</span> VER RUNAS
                     </a>
                 </div>
             </div>            
