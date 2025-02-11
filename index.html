@@ -305,15 +305,21 @@
         }
     } 
         
-        .new-badge {
+.button-container {
+    position: relative;
+    display: inline-block;
+}
+
+.new-badge {
     position: absolute;
-    transform: rotate(-15deg);
+    top: -15px;
+    left: -15px;
     color: #ff0000;
     font-size: 1.2rem;
     font-weight: bold;
     animation: breathe 2s ease-in-out infinite;
     text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-    margin-left: 0.5rem;
+    z-index: 1;
 }
 
 @keyframes breathe {
@@ -327,12 +333,7 @@
         transform: rotate(-15deg) scale(1);
     }
 }
-
-.button-container {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-}
+        
         
                                  
     </style>
@@ -347,9 +348,14 @@
                 <div>
                     <h1 class="title-big mb-8 title-glow">HEROES CLANS</h1>
                     <p class="text-lg mb-8">Los powerups de esta temporada</p>
-                    <a href="#catalog" class="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 transition duration-300">
-                       <span class="new-badge">NEW</span> VER RUNAS
-                    </a>
+                   
+                    <div class="button-container">
+    <span class="new-badge">NEW</span>
+    <a href="#catalog" class="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 transition duration-300">
+        VER RUNAS
+    </a>
+                    </div>
+                    
                 </div>
             </div>            
         </section>
