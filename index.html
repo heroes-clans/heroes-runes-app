@@ -3,7 +3,7 @@
 <head>
     <!-- ... enlaces :) ... -->
     
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/rybh1bqx/IMG-20250211-WA0071-1.jpg">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/T1BdN05c/63-sin-t-tulo-20250212175847.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HEROES CLANS</title>
@@ -61,26 +61,7 @@
             100% { background-position: 550px 550px, 350px 350px, 250px 250px; }
         }
 
-        .clan-slot {
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            min-height: 100px;
-            transition: all 0.3s ease;
-            margin-bottom: 15px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
         
-        }
-
-        .clan-slot:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transition: all 0.3s ease;
-        }
 
         .slot-left {
             flex-direction: row;
@@ -90,21 +71,10 @@
             flex-direction: row-reverse;
         }
 
-        .rune-logo {
-            width: 60px;
-            height: 60px;
-            background: #1a1a1a;
-            border-radius: 50%;
-            margin: 0 15px;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
+        
+  
 
-        .rune-name {
-            flex-grow: 1;
-            text-align: left;
-            font-size: 0.8em;
-        }
+        
 
         .rune-card {
             background: rgba(255, 255, 255, 0.1);
@@ -148,15 +118,16 @@
         }
 
         .popup-content {
-            background: rgba(30, 30, 50, 0.95);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            animation: slideUp 0.3s ease;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
+    background: rgba(30, 30, 50, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 400px; /* Ajustado para mejor proporción */
+    width: 90%;
+    position: relative;
+    animation: slideUp 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -281,14 +252,14 @@
     }
 
     .coin-icon {
-        width: 12px;
-        height: 12px;
-        object-fit: contain;
-        display: inline-flex;
-        align-self: center;
-        margin-top: -1px; /* Ajustado de -2px a -1px */
-        vertical-align: middle;
-        position: relative;
+        width: 12px !important;
+        height: 12px !important;
+        object-fit: contain !important;
+        display: inline-flex !important;
+        align-self: center !important;
+        margin-top: -1px !important; /* Ajustado de -2px a -1px */
+        vertical-align: middle !important;
+        position: relative !important;
         top: 0px; /* Ajustado de -1px a 0px para bajar ligeramente la moneda */
         animation: coinGlow 5s infinite;
         filter: drop-shadow(0 0 2px rgba(255, 215, 0, 0.5));
@@ -388,7 +359,7 @@
 .animated-button {
     position: relative;
     padding: 1rem 2rem;
-    background: rgba(37, 99, 235, 0.8);
+    background: rgba(0, 149, 255, 0.8); /* Cambiado a un azul más brillante */
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 0.9rem;
@@ -407,15 +378,22 @@
     position: absolute;
     inset: -2px;
     background: linear-gradient(45deg, 
-        #ff0000, #ff7300, #fffb00, #48ff00, 
-        #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        #00f7ff, /* Azul cyan brillante */
+        #0051ff, /* Azul eléctrico */
+        #001eff, /* Azul real */
+        #0099ff, /* Azul cielo brillante */
+        #00ddff, /* Azul turquesa */
+        #0400ff, /* Azul marino */
+        #00f7ff  /* Volver al inicio para un degradado suave */
+    );
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
-    animation: glowing 20s linear infinite;
+    animation: glowing 12s linear infinite; /* Reducido a 12s para un efecto más dinámico */
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
+
 
 /* Button hover effects */
 .animated-button:hover {
@@ -439,11 +417,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(37, 99, 235, 0.8);
+    background: rgba(0, 149, 255, 0.8);
     left: 0;
     top: 0;
     border-radius: 4px;
 }
+
 
 @keyframes glowing {
     0% { background-position: 0 0; }
@@ -557,7 +536,293 @@
     transform: translate(0);
 }
 
-                                 
+
+
+       .clan-slot {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-height: 100px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.clan-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+}
+
+/* Efecto arcoíris para los logos de runas */
+.clan-slot img.rune-logo {
+    animation: rainbowGlow 4s linear infinite;
+}
+
+@keyframes rainbowGlow {
+    0% { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8)); }  /* Rojo */
+    25% { filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8)); }  /* Azul */
+    50% { filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.8)); }  /* Verde */
+    75% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)); }  /* Amarillo */
+    100% { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8)); }  /* Rojo */
+}
+
+/* Modifica los estilos existentes para los nombres de runas según el tipo */
+[data-rune-type="blue"] .rune-name {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+    animation: breathingGlowBlue 3s ease-in-out infinite;
+}
+
+[data-rune-type="red"] .rune-name {
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+    animation: breathingGlowRed 3s ease-in-out infinite;
+}
+
+[data-rune-type="yellow"] .rune-name {
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.8);
+    animation: breathingGlowYellow 3s ease-in-out infinite;
+}
+
+/* Animaciones breathing glow para cada color */
+@keyframes breathingGlowBlue {
+    0% {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.8),
+                     0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(59, 130, 246, 1),
+                     0 0 30px rgba(59, 130, 246, 0.6),
+                     0 0 40px rgba(59, 130, 246, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(59, 130, 246, 0.8),
+                     0 0 20px rgba(59, 130, 246, 0.3);
+    }
+}
+
+@keyframes breathingGlowRed {
+    0% {
+        text-shadow: 0 0 10px rgba(239, 68, 68, 0.8),
+                     0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(239, 68, 68, 1),
+                     0 0 30px rgba(239, 68, 68, 0.6),
+                     0 0 40px rgba(239, 68, 68, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(239, 68, 68, 0.8),
+                     0 0 20px rgba(239, 68, 68, 0.3);
+    }
+}
+
+@keyframes breathingGlowYellow {
+    0% {
+        text-shadow: 0 0 10px rgba(245, 158, 11, 0.8),
+                     0 0 20px rgba(245, 158, 11, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(245, 158, 11, 1),
+                     0 0 30px rgba(245, 158, 11, 0.6),
+                     0 0 40px rgba(245, 158, 11, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(245, 158, 11, 0.8),
+                     0 0 20px rgba(245, 158, 11, 0.3);
+    }
+}
+
+/* Estilo para slots vacíos */
+.clan-slot:not([data-rune-type]) .rune-name {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    animation: breathingGlowEmpty 3s ease-in-out infinite;
+}
+
+@keyframes breathingGlowEmpty {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                     0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4),
+                     0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+                     0 0 20px rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+.clan-slot {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    min-height: 100px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.clan-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* Efectos glow específicos para cada tipo de runa */
+[data-rune-type="blue"] .rune-logo {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+}
+
+[data-rune-type="red"] .rune-logo {
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+}
+
+[data-rune-type="yellow"] .rune-logo {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+}
+
+/* Nombres de las runas según su tipo */
+[data-rune-type="blue"] .rune-name {
+    color: #93c5fd;
+}
+
+[data-rune-type="red"] .rune-name {
+    color: #fca5a5;
+}
+
+[data-rune-type="yellow"] .rune-name {
+    color: #fcd34d;
+}
+
+
+
+/* Actualizar el efecto arcoíris para aplicarlo directamente a las imágenes */
+.clan-slot img.rune-logo {
+    animation: rainbowGlow 4s linear infinite;
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 1));
+}
+
+@keyframes rainbowGlow {
+    0% { filter: drop-shadow(0 0 16px rgba(239, 68, 68, 2)); }  /* Rojo */
+    25% { filter: drop-shadow(0 0 16px rgba(59, 130, 246, 2)); }  /* Azul */
+    50% { filter: drop-shadow(0 0 16px rgba(16, 185, 129, 2)); }  /* Verde */
+    75% { filter: drop-shadow(0 0 16px rgba(245, 158, 11, 2)); }  /* Amarillo */
+    100% { filter: drop-shadow(0 0 16px rgba(239, 68, 68, 2)); }  /* Rojo */
+}
+
+/* Para los slots vacíos, mantener un estilo simple sin círculo */
+.clan-slot div.rune-logo {
+    background: none;
+}
+            
+                          
+                /* Agregar después de tus estilos existentes */
+
+
+
+/* Mejora del efecto hover para las cartas de runas */
+.rune-card {
+    transform-style: preserve-3d;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.rune-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Efecto floating para los logos de clanes */
+.clan-logo {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Mejora del efecto glassmorphism */
+.clan-container {
+    
+    
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Efecto para el popup */
+.popup-content {
+    transform: perspective(1000px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    
+    backdrop-filter: blur(20px);
+}
+
+.popup-content:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg);
+}
+          
+  .rune-details img {
+    width: auto; /* Cambiado de width: 100% */
+    height: 128px; /* Altura fija *
+    margin: 0 auto;
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción */
+}
+                        
+  
+  
+  
+  .slot-left {
+    flex-direction: row;
+    gap: 8px;
+}
+
+.slot-right {
+    flex-direction: row-reverse;
+    gap: 8px;
+}
+
+.rune-name {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 0.8em;
+    margin-left: -4px;
+}
+
+.slot-right .rune-name {
+    text-align: right;
+    margin-right: -4px;
+}
+
+  
+  .rune-logo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    object-fit: contain;
+}
+
+  
+
+
+                        
     </style>
 </head>
 <body>
@@ -580,9 +845,9 @@
                      class="w-32 h-32 mx-auto glowing-logo animate-fade-up">
                      
             </div>
-            <h1 class="title-big mb-8 title-glow animate-fade-down delay-400">HEROES CLANS</h1>
-            <p class="text-lg mb-8 animate-fade-left delay-300">Las novedades de esta temporada</p>
-            <div class="button-container animate-fade-right delay-400">
+            <h1 class="title-big mb-8 title-glow animate-fade-up delay-400">HEROES CLANS</h1>
+            <p class="text-lg mb-8 animate-fade-up delay-300">Las novedades de esta temporada</p>
+            <div class="button-container animate-fade-up delay-400">
                 <span class="new-badge">NEW</span>
                 <a href="#catalog" class="animated-button animate-fade-left delay-400">
     VER RUNAS
@@ -671,120 +936,125 @@
                 <h2 class="text-center text-2xl mb-16 text-glow">CLANES ACTIVOS</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Clan Vega -->
-                    <div class="clan-container fade-in-left">
-                        <div class="clan-header">
-                            <img src="https://i.postimg.cc/sDGd2hHg/Photo-Room-20250209-163733.png" alt="Vega Logo" class="clan-logo">
-                            <h3 class="text-xl clan-vega clan-name">VEGA</h3>
-                        </div>
-                        <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 15 H.COINS</p>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                    </div>
+<div class="clan-container fade-in-left">
+    <div class="clan-header">
+        <img src="https://i.postimg.cc/sDGd2hHg/Photo-Room-20250209-163733.png" alt="Vega Logo" class="clan-logo">
+        <h3 class="text-xl clan-vega clan-name">VEGA</h3>
+    </div>
+    <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 7 H.COINS</p>
+    
+    
+    <div class="clan-slot slot-left" data-rune-type="yellow">
+        <img src="https://i.postimg.cc/wTFdmRTn/Photo-Room-20250210-085019.png" alt="Mr Crab" class="rune-logo">
+        <span class="rune-name">MR CRAB</span>
+    </div>
+    
+    <div class="clan-slot slot-right">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-right">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+</div>
 
-                    <!-- Clan Arturo -->
-                    <div class="clan-container fade-in-left">
-                        <div class="clan-header">
-                            <img src="https://i.postimg.cc/C5W28crL/Photo-Room-20250209-163949.png" alt="Arturo Logo" class="clan-logo">
-                            <h3 class="text-xl clan-arturo clan-name">ARTURO</h3>
-                        </div>
-                        <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 15 H.COINS</p>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                    </div>
+<!-- Clan Arturo -->
+<div class="clan-container fade-in-left">
+    <div class="clan-header">
+        <img src="https://i.postimg.cc/C5W28crL/Photo-Room-20250209-163949.png" alt="Arturo Logo" class="clan-logo">
+        <h3 class="text-xl clan-arturo clan-name">ARTURO</h3>
+    </div>
+    <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 2 H.COINS</p>
+    <div class="clan-slot slot-left" data-rune-type="blue">
+        <img src="https://i.postimg.cc/VvdjGgj3/Photo-Room-20250209-221112.png" alt="Super Monk" class="rune-logo">
+        <span class="rune-name">SUPER MONK</span>
+    </div>
+    <div class="clan-slot slot-right" data-rune-type="red">
+        <img src="https://i.postimg.cc/nzkrNwTL/Photo-Room-20250210-082021.png" alt="Super Readers Duo" class="rune-logo">
+        <span class="rune-name">SUPER READERS DUO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-right">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+</div>
 
-                    <!-- Clan Sirius -->
-                    <div class="clan-container fade-in-left">
-                        <div class="clan-header">
-                            <img src="https://i.postimg.cc/3wBzqCNn/Photo-Room-20250209-163858.png" alt="Sirius Logo" class="clan-logo">
-                            <h3 class="text-xl clan-sirius clan-name">SIRIUS</h3>
-                        </div>
-                        <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 15 H.COINS</p>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                    </div>
+<!-- Clan Sirius -->
+<div class="clan-container fade-in-left">
+    <div class="clan-header">
+        <img src="https://i.postimg.cc/3wBzqCNn/Photo-Room-20250209-163858.png" alt="Sirius Logo" class="clan-logo">
+        <h3 class="text-xl clan-sirius clan-name">SIRIUS</h3>
+    </div>
+    <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 4 H.COINS</p>
+    <div class="clan-slot slot-left" data-rune-type="red">
+        <img src="https://i.postimg.cc/QtrBGmSP/Photo-Room-20250210-075807.png" alt="Hiper Monks Duo" class="rune-logo">
+        <span class="rune-name">HIPER MONKS DUO</span>
+    </div>
+    <div class="clan-slot slot-right" data-rune-type="blue">
+        <img src="https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png" alt="Master of Reading" class="rune-logo">
+        <span class="rune-name">MASTER OF READING</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-right">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+</div>
 
-                    <!-- Clan Antares -->
-                    <div class="clan-container fade-in-left">
-                        <div class="clan-header">
-                            <img src="https://i.postimg.cc/q7xdTHbc/Photo-Room-20250209-163507.png" alt="Antares Logo" class="clan-logo">
-                            <h3 class="text-xl clan-antares clan-name">ANTARES</h3>
-                        </div>
-                        <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 20 H.COINS</p>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-right">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                        <div class="clan-slot slot-left">
-                            <div class="rune-logo"></div>
-                            <span class="rune-name">SLOT VACÍO</span>
-                        </div>
-                    </div>
+
+<!-- Clan Antares -->
+<div class="clan-container fade-in-left">
+    <div class="clan-header">
+        <img src="https://i.postimg.cc/q7xdTHbc/Photo-Room-20250209-163507.png" alt="Antares Logo" class="clan-logo">
+        <h3 class="text-xl clan-antares clan-name">ANTARES</h3>
+    </div>
+    <p class="coins-display mb-4"> <img src="https://i.postimg.cc/Dw8cS0hh/Photo-Room-20250210-170758.png" alt="coin" class="coin-icon"> 4 H.COINS</p>
+    <div class="clan-slot slot-left" data-rune-type="yellow">
+        <img src="https://i.postimg.cc/wTFdmRTn/Photo-Room-20250210-085019.png" alt="Mr Crab" class="rune-logo">
+        <span class="rune-name">MR CRAB</span>
+    </div>
+    <div class="clan-slot slot-right" data-rune-type="red">
+        <img src="https://i.postimg.cc/nzkrNwTL/Photo-Room-20250210-082021.png" alt="Super Readers Duo" class="rune-logo">
+        <span class="rune-name">SUPER READERS DUO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-right">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+    <div class="clan-slot slot-left">
+        <div class="rune-logo"></div>
+        <span class="rune-name">SLOT VACÍO</span>
+    </div>
+</div>
+
                 </div>
             </section>
 
@@ -859,7 +1129,7 @@
         </div>
 
         <!-- Super Worker -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER WORKER', 'Si una persona del clan llega a 8h de Deepwork en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/0ygpnprB/Photo-Room-20250209-222256.png')">
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER WORKER', 'Si una persona del clan llega a 8h de Deepwork en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/0ygpnprB/Photo-Room4-20250209-222256.png')">
             <img src="https://i.postimg.cc/0ygpnprB/Photo-Room-20250209-222256.png" alt="Super Worker" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">SUPER WORKER</h4>
             <p class="coins-display">5 H.COINS</p>
@@ -1065,17 +1335,17 @@ document.getElementById('runePopup').addEventListener('click', function(e) {
 
         // Actualiza los colores basado en la posición del scroll
         if (currentScroll < clansSection) {
-            // Sección intro - Gris claro
-            progressBar.style.background = '#94a3b8';
-            progressBar.style.boxShadow = '0 0 10px rgba(148, 163, 184, 0.5)';
+            // Sección intro - Celeste claro
+            progressBar.style.background = '#a5d8ff';
+            progressBar.style.boxShadow = '0 0 10px rgba(165, 216, 255, 0.5)';
             progressBar.style.animation = 'none';
         } 
         else if (currentScroll < catalogSection) {
-            // Sección clanes - Naranja con efecto fuego
-            progressBar.style.background = 'linear-gradient(45deg, #ff4d00, #ff9e00, #ff4d00)';
+            // Sección clanes - Celeste claro con efecto brillante
+            progressBar.style.background = 'linear-gradient(45deg, #a5d8ff, #d0ebff, #a5d8ff)';
             progressBar.style.backgroundSize = '200% 200%';
             progressBar.style.animation = 'fireAnimation 3s ease infinite';
-            progressBar.style.boxShadow = '0 0 15px rgba(255, 77, 0, 0.6)';
+            progressBar.style.boxShadow = '0 0 15px rgba(165, 216, 255, 0.6)';
         }
          
     });
