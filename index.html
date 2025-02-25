@@ -27,19 +27,17 @@
         .clan-sirius { color: #10B981; }    /* Verde */
         .clan-antares { color: #EF4444; }   /* Rojo */
 
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background-image: url('https://i.postimg.cc/k56FPbZ4/photo-1462331940025-496dfbfc7564.jpg');
-            background-size: cover;
-            background-position: center;
-            transform: translateZ(-1px) scale(2);
-            z-index: -1;
-            filter: brightness(0.3);
-        }
+        .video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.3);
+}
+
 
         .stars {
             position: fixed;
@@ -102,31 +100,35 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            animation: fadeIn 0.3s ease;
-        }
+       .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(8px);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .popup-content {
+        background: rgba(15, 23, 42, 0.95);
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 90%;
+        width: 400px;
+        position: relative;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
 
-        .popup-content {
-    background: rgba(30, 30, 50, 0.95);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 400px; /* Ajustado para mejor proporción */
-    width: 90%;
-    position: relative;
-    animation: slideUp 0.3s ease;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
 
 
         @keyframes fadeIn {
@@ -278,8 +280,19 @@
     } 
         
 .button-container {
+    margin-bottom: 1rem; /* Espacio entre botones */
     position: relative;
     display: inline-block;
+}
+
+/* Añadir un contenedor más grande */
+.container-boosts {
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding: 12px; /* Añadido */
+    border-radius: 10px; /* Añadido */
+    background: rgba(245, 158, 11, 0.1); /* Añadido */
 }
 
 .new-badge {
@@ -784,7 +797,24 @@
     margin: 0 auto;
     object-fit: contain; /* Asegura que la imagen mantenga su proporción */
 }
-                        
+            
+ .rune-details img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+           
+   .rune-details h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    margin: 0;
+    margin-top: -22px; /* Añade esta línea */
+}         
+            
+
+
+           
   
   
   
@@ -824,6 +854,501 @@
 
                         
     </style>
+    
+    <style>
+        <!-- ESTILOS DE EL CARRUSEL DE BOOSTS 3D-->
+        .carousel-3d-container {
+    perspective: 1000px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-3d {
+    position: relative;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 1s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.carousel-item.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.boost-card {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    height: 350px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.boost-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.boost-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.boost-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transition: all 0.3s ease;
+}
+
+.boost-card:hover .boost-image {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+.boost-info {
+    text-align: center;
+}
+
+.boost-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.boost-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.carousel-controls {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin: 0 20px;
+}
+
+.carousel-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+
+.design-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider-content {
+    position: relative;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 2rem;
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
+    visibility: hidden;
+    margin-top: 30px; /* Añade esta línea */
+}
+
+@media (min-width: 768px) {
+    .slider-item {
+        flex-direction: row;
+    }
+}
+
+.slider-item.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.slider-item:not(.active) {
+    transform: translateX(100%);
+}
+
+.slider-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out 0.3s;
+}
+
+@media (min-width: 768px) {
+    .slider-text {
+        text-align: left;
+        padding-right: 4rem;
+    }
+}
+
+.slider-item.active .slider-text {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slider-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.8s ease-in-out 0.5s;
+    margin-top: 15px; /* Añade esta línea */
+}
+
+
+.slider-item.active .slider-image {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slider-image img {
+    height: auto;
+    width: 80%;
+    max-width: 400px;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 767px) {
+    .slider-image img {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 10px; /* Añade esta línea */
+        transform: translateY(10px); /* Añade esta línea */
+    }
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 2rem;
+    left: 75%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.slider-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.slider-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+    
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+    </style>
+    
+    <style> 
+        <!-- ESTILOS DEL BOTÓN DE BOOSTS-->
+        
+       .button-boosts {
+    position: relative;
+    padding: 1rem 2rem;
+    background: rgba(245, 158, 11, 0.8);
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block; /* Añadido */
+    min-width: 200px; /* Añadido */
+    text-align: center; /* Añadido */
+}
+
+
+/* Efecto de borde brillante mejorado */
+.button-boosts::before {
+    content: '';
+    position: absolute;
+    inset: -3px; /* Aumentado de -2px a -3px */
+    background: linear-gradient(45deg, 
+        #fcd34d,
+        #f59e0b,
+        #d97706,
+        #f59e0b,
+        #fcd34d,
+        #d97706,
+        #fcd34d
+    );
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(8px); /* Aumentado de 5px a 8px */
+    animation: glowing 12s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+/* Efectos hover mejorados */
+.button-boosts:hover {
+    transform: scale(1.05);
+    background: rgba(245, 158, 11, 0.9);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.5); /* Aumentado */
+}
+
+/* Efectos hover */
+.button-boosts:hover {
+    transform: scale(1.05);
+    background: rgba(245, 158, 11, 0.9);
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.5);
+}
+
+.button-boosts:hover::before {
+    opacity: 1;
+}
+
+
+.button-boosts:active {
+    transform: scale(0.95);
+}
+
+/* Elemento after para brillo extra */
+.button-boosts::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(245, 158, 11, 0.8);
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+}
+
+
+
+
+    </style>
+    
+    <style>
+    /* Estilos para los slots de inventario */
+    .inventory-slot {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background: rgba(255, 255, 255, 0.05);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+       .item-details img {
+            width: auto;
+            height: 128px;
+            margin: 0 auto;
+            object-fit: contain;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+         .item-details img:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+        }
+        
+    
+    .item-details h3 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+    .inventory-slot:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .inventory-slot.empty:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .inventory-item {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+    
+    .inventory-slot:hover .inventory-item {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+    }
+    
+    .item-count {
+        position: absolute;
+        bottom: 3px;
+        right: 6px;
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        font-size: 0.7rem;
+        min-width: 18px;
+        height: 18px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Estilos específicos según el tipo de item */
+    [data-item-type="divine-shield"] .inventory-item {
+        filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.6));
+    }
+    
+    [data-item-type="divine-choice"] .inventory-item {
+        filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+    }
+    
+    [data-item-type="divine-ray"] .inventory-item {
+        filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.6));
+    }
+    
+    /* Animación para slots con items */
+    .inventory-slot:not(.empty) {
+        animation: pulseSlot 3s infinite;
+    }
+    
+    @keyframes pulseSlot {
+        0% { border-color: rgba(255, 255, 255, 0.2); }
+        50% { border-color: rgba(255, 255, 255, 0.5); }
+        100% { border-color: rgba(255, 255, 255, 0.2); }
+    }
+    
+     .popup-close-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        padding: 0.25rem 0.5rem;
+        line-height: 1;
+    }
+    
+    .popup-close-btn:hover {
+        color: rgba(255, 255, 255, 0.7);
+        transform: scale(1.1);
+    }
+</style>
+
+
+
+    
 </head>
 <body>
     
@@ -836,26 +1361,42 @@
 
     <div class="parallax-wrapper">
         <section class="hero">
-    <div class="parallax-bg"></div>
+    <video class="video-bg" autoplay muted loop playsinline>
+    <source src="hero.mp4" type="video/mp4">
+</video>
+
     <div class="absolute inset-0 flex items-center justify-center text-center">
-        <div>
-            <div class="relative mb-8">
-                <img src="https://i.postimg.cc/43QCyYxx/Photo-Room-20250211-172348.png" 
-                     alt="Heroes Clans Logo" 
-                     class="w-32 h-32 mx-auto glowing-logo animate-fade-up">
-                     
-            </div>
-            <h1 class="title-big mb-8 title-glow animate-fade-up delay-400">CLANS STORE</h1>
-            <p class="text-lg mb-8 animate-fade-up delay-300">Las novedades de esta temporada</p>
+    <div>               
+        <div class="relative mb-8">
+            <img src="https://i.postimg.cc/Dz4tBHHj/Photo-Room-20250210-170758.png" 
+                 alt="Heroes Clans Logo" 
+                 class="w-32 h-32 mx-auto glowing-logo animate-fade-up">
+        </div>
+        <h1 class="title-big mb-8 title-glow animate-fade-up delay-400">CLANS STORE</h1>
+        <p class="text-lg mb-8 animate-fade-up delay-300">Las novedades de esta temporada</p>
+        
+        <!-- Contenedor para ambos botones -->
+        <div class="flex flex-col items-center gap-4">
+            <!-- Botón VER RUNAS -->
             <div class="button-container animate-fade-up delay-400">
                 <span class="new-badge">NEW</span>
-                <a href="#catalog" class="animated-button animate-fade-left delay-400">
-    VER RUNAS
+                <a href="#catalog" class="animated-button">
+                    VER RUNAS
                 </a>
             </div>
             
+            <!-- Botón VER BOOSTS -->
+            <div class="container-boosts animate-fade-up delay-400">
+                <span class="new-badge">NEW</span>
+                <a href="#boosts" class="button-boosts">
+                     ‎‎VER BOOSTS‎‎‎    
+                </a>
+            </div>
         </div>
-    </div>            
+    </div>
+</div>
+
+          
 </section>
     </div>
   
@@ -1071,6 +1612,119 @@
                 </div>
             </div>
 
+
+
+<!-- Sección de Inventario -->
+<section id="inventory" class="py-20 fade-in fade-in-section">
+    <h2 class="text-2xl text-center mb-16 text-glow">INVENTARIO DE BOOSTS</h2>
+    
+    <div class="container mx-auto max-w-7xl">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Inventario del Clan Vega -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/sDGd2hHg/Photo-Room-20250209-163733.png" alt="Vega Logo" class="clan-logo">
+                    <h3 class="text-xl clan-vega clan-name">VEGA</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Arturo -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/C5W28crL/Photo-Room-20250209-163949.png" alt="Arturo Logo" class="clan-logo">
+                    <h3 class="text-xl clan-arturo clan-name">ARTURO</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Sirius -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/3wBzqCNn/Photo-Room-20250209-163858.png" alt="Sirius Logo" class="clan-logo">
+                    <h3 class="text-xl clan-sirius clan-name">SIRIUS</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Antares -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/q7xdTHbc/Photo-Room-20250209-163507.png" alt="Antares Logo" class="clan-logo">
+                    <h3 class="text-xl clan-antares clan-name">ANTARES</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</section>
+
+<!-- Popup para detalles de items -->
+    
+   <!-- Popup para detalles de items - Corregido -->
+    <div id="itemPopup" class="popup-overlay">
+        <div class="popup-content">
+            <button class="popup-close-btn" onclick="closeItemPopup()">×</button>
+            <div class="item-details">
+                <img src="" alt="Item" class="mb-4">
+                <h3 class="mb-4"></h3>
+                <p class="mb-4 text-sm leading-relaxed"></p>
+                <div class="text-center">
+                    <span class="usage-info text-sm text-gray-400">Uso único</span>
+                </div>
+            </div>
+        </div>
+    </div>
             <!-- Catálogo de Runas -->
             <section id="catalog" class="py-20 fade-in fade-in-section">
                 <h2 class="text-2xl text-center mb-16 text-glow">CATÁLOGO DE RUNAS</h2>
@@ -1080,28 +1734,28 @@
     <h3 class="text-xl text-blue-400 mb-8">RUNAS AZULES</h3>
     <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
         <!-- Walk Master -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('WALK MASTER', 'Este Boost otorga un +10 Puntos si se supera a Polaris en Pasos y Correr', '3', 'https://i.postimg.cc/XJSsNrPt/Photo-Room-20250209-155538.png')">
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('WALK MASTER', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Pasos y Correr', '3', 'https://i.postimg.cc/XJSsNrPt/Photo-Room-20250209-155538.png')">
             <img src="https://i.postimg.cc/XJSsNrPt/Photo-Room-20250209-155538.png" alt="Walk Master" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">WALK MASTER</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
         <!-- Master of Deepwork -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF DEEPWORK', 'Este Boost otorga un +10 Puntos si se supera a Polaris en Deepwork', '3', 'https://i.postimg.cc/G2xfXD5d/Photo-Room-20250209-213612.png')">
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF DEEPWORK', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Deepwork', '3', 'https://i.postimg.cc/G2xfXD5d/Photo-Room-20250209-213612.png')">
             <img src="https://i.postimg.cc/G2xfXD5d/Photo-Room-20250209-213612.png" alt="Master of Deepwork" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF DEEPWORK</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
         <!-- Master of Chill -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF CHILL', 'Este Boost otorga un +10 Puntos si se supera a Polaris en Meditar', '3', 'https://i.postimg.cc/mDqMrsy9/Photo-Room-20250209-215201.png')">
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF CHILL', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Meditar', '3', 'https://i.postimg.cc/mDqMrsy9/Photo-Room-20250209-215201.png')">
             <img src="https://i.postimg.cc/mDqMrsy9/Photo-Room-20250209-215201.png" alt="Master of Chill" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF CHILL</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
         <!-- Master of Reading -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF READING', 'Este Boost otorga un +10 Puntos si se supera a Polaris en Lectura', '3', 'https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png')">
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF READING', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Lectura', '3', 'https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png')">
             <img src="https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png" alt="Master of Reading" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF READING</h4>
             <p class="coins-display">3 H.COINS</p>
@@ -1204,47 +1858,67 @@
         </div>
     </div>
 </div>
+</section>
 
-<!-- Boosts Divinos -->
+<section id="boosts">
 <div class="mb-16 fade-in-section">
     <h2 class="text-2xl text-center mb-16 text-glow">BOOSTS</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-        <!-- Escudo Divino -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('ESCUDO DIVINO', 'Te protege de quedar en cuarto lugar, como mínimo te dejará con los mismos puntos que el 3er lugar.', '4', 'https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png')">
-            <img src="https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png" alt="Escudo Divino" class="h-32 w-full object-contain rounded mb-4">
-            <h4 class="text-sm mb-2">ESCUDO DIVINO</h4>
-            <p class="coins-display">4 H.COINS</p>
+    
+    <div class="design-slider">
+        <div class="slider-content">
+            <div class="slider-item active">
+                <div class="slider-text">
+                    <h2 class="text-3xl font-bold mb-4">ESCUDO DIVINO</h2>
+                    <p class="text-gray-300 mb-8">Te protege de quedar en cuarto lugar, como mínimo te dejará con los mismos puntos que el 3er lugar.</p>
+                    <div class="coins-display">4 H.COINS</div>
+                </div>
+                <div class="slider-image">
+                    <img src="https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png" alt="Escudo Divino" class="h-64 object-contain">
+                </div>
+            </div>
+            
+            <div class="slider-item">
+                <div class="slider-text">
+                    <h2 class="text-3xl font-bold mb-4">ELECCIÓN DIVINA</h2>
+                    <p class="text-gray-300 mb-8">Te da la oportunidad de elegir la temática de la próxima competición. Piénsalo bien.</p>
+                    <div class="coins-display">2 H.COINS</div>
+                </div>
+                <div class="slider-image">
+                    <img src="https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png" alt="Elección Divina" class="h-64 object-contain">
+                </div>
+            </div>
+            
+            <div class="slider-item">
+                <div class="slider-text">
+                    <h2 class="text-3xl font-bold mb-4">RAYO DIVINO</h2>
+                    <p class="text-gray-300 mb-8">Se activa un evento en el que aleatoriamente a un clan le cae un rayo y se le descuentan X cantidad de puntos de su contador.</p>
+                    <div class="coins-display">1 H.COIN</div>
+                </div>
+                <div class="slider-image">
+                    <img src="https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png" alt="Rayo Divino" class="h-64 object-contain">
+                </div>
+            </div>
         </div>
-
-        <!-- Elección Divina -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('ELECCIÓN DIVINA', 'Te da la oportunidad de elegir la temática de la próxima competición. Piénsalo bien.', '2', 'https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png')">
-            <img src="https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png" alt="Elección Divina" class="h-32 w-full object-contain rounded mb-4">
-            <h4 class="text-sm mb-2">ELECCIÓN DIVINA</h4>
-            <p class="coins-display">2 H.COINS</p>
-        </div>
-
-        <!-- Rayo Divino -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('RAYO DIVINO', 'Se activa un evento en el que aleatoriamente a un clan le cae un rayo y se le descuentan X cantidad de puntos de su contador. (IMPORTANTE: es completamente aleatorio, por lo cual hay una probabilidad que te toque a ti mismo)', '1', 'https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png')">
-            <img src="https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png" alt="Rayo Divino" class="h-32 w-full object-contain rounded mb-4">
-            <h4 class="text-sm mb-2">RAYO DIVINO</h4>
-            <p class="coins-display">1 H.COIN</p>
+        
+        <div class="slider-controls">
+            <button class="slider-button prev">&lt;</button>
+            <button class="slider-button next">&gt;</button>
         </div>
     </div>
 </div>
 
+
     </div>
 </div>
-
+</div>
+</div>
 </section>
-</div>
-</div>
-
 <script>
 // Parallax suave
 let lastScrollTop = 0;
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
-    const parallax = document.querySelector('.parallax-bg');
+    const parallax = document.querySelector('.video-bg');
     const delta = scrolled - lastScrollTop;
     lastScrollTop = scrolled;
     
@@ -1450,6 +2124,202 @@ function initFadeAnimations() {
 // Inicializa las animaciones cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', initFadeAnimations);
 </script>
+
+<script>
+    <!-- JS DE LOS FX DEL CARRUSEL DE BOOSTS 3D-->
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.design-slider');
+    const items = document.querySelectorAll('.slider-item');
+    const prevBtn = document.querySelector('.slider-button.prev');
+    const nextBtn = document.querySelector('.slider-button.next');
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // Crear dots
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'slider-dots';
+    items.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+    slider.appendChild(dotsContainer);
+
+    function updateSlider() {
+        items.forEach((item, index) => {
+            item.classList.remove('active');
+            if (index === currentIndex) {
+                item.classList.add('active');
+            }
+        });
+
+        // Actualizar dots
+        document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlider();
+        resetAutoPlay();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateSlider();
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextSlide, 10000);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+    prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoPlay();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoPlay();
+    });
+
+    // Hover pause
+    slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+    slider.addEventListener('mouseleave', startAutoPlay);
+
+    // Touch events
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+
+    slider.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+            resetAutoPlay();
+        }
+    }
+
+    // Inicializar
+    updateSlider();
+    startAutoPlay();
+});
+
+</script>
+
+ 
+<script>
+    // Item details object that contains information for each item
+    const itemDetails = {
+        'divine-shield': {
+            name: 'ESCUDO DIVINO',
+            description: 'Te protege de quedar en cuarto lugar, como mínimo te dejará con los mismos puntos que el 3er lugar.',
+            image: 'https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png'
+        },
+        'divine-choice': {
+            name: 'ELECCIÓN DIVINA',
+            description: 'Te da la oportunidad de elegir la temática de la próxima competición. Piénsalo bien.',
+            image: 'https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png'
+        },
+        'divine-ray': {
+            name: 'RAYO DIVINO',
+            description: 'Se activa un evento en el que aleatoriamente a un clan le cae un rayo y se le descuentan X cantidad de puntos de su contador.',
+            image: 'https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png'
+        }
+    };
+
+    // Función unificada para mostrar popups
+    
+    // Update the showItemPopup function
+function showItemPopup(type) {
+    const popup = document.getElementById('itemPopup');
+    popup.style.opacity = '0';
+    popup.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    const details = popup.querySelector('.item-details');
+    const item = itemDetails[type];
+    
+    if (item) {
+        details.querySelector('h3').textContent = item.name;
+        details.querySelector('p').textContent = item.description;
+        details.querySelector('img').src = item.image;
+        details.querySelector('img').alt = item.name;
+    }
+    
+    // Allow DOM to update before showing animation
+    requestAnimationFrame(() => {
+        popup.style.opacity = '1';
+        popup.classList.add('active');
+    });
+}
+
+// Update the closeItemPopup function
+function closeItemPopup() {
+    const popup = document.getElementById('itemPopup');
+    popup.style.opacity = '0';
+    popup.classList.remove('active');
+    
+    setTimeout(() => {
+        popup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+    
+    
+    
+
+    // Función para cerrar el popup al hacer clic fuera del contenido
+    document.getElementById('itemPopup').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeItemPopup();
+        }
+    });
+    
+    // Agregar listeners a los slots de inventario
+    document.addEventListener('DOMContentLoaded', function() {
+        const slots = document.querySelectorAll('.inventory-slot:not(.empty)');
+        slots.forEach(slot => {
+            slot.addEventListener('click', function() {
+                const itemType = this.getAttribute('data-item-type');
+                if (itemType) {
+                    showItemPopup(itemType);
+                }
+            });
+        });
+    });
+</script>
+
+
+
 
 </body>
 </html>
