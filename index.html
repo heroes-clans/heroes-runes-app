@@ -10,6 +10,8 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
+        
+     
         body {
             font-family: 'Press Start 2P', cursive;
             background: #0a0a2a;
@@ -550,19 +552,19 @@
 }
 
 
-
-       .clan-slot {
+.clan-slot {
     border: 2px solid rgba(255, 255, 255, 0.2);
-    min-height: 100px;
+    min-height: 70px; /* Reducido de 100px a 70px */
     transition: all 0.3s ease;
-    margin-bottom: 15px;
+    margin-bottom: 12px; /* Reducido de 15px a 12px */
     position: relative;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px 10px; /* Ajustado el padding vertical */
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
 }
+       
 
 .clan-slot:hover {
     transform: translateY(-2px);
@@ -675,16 +677,18 @@
 
 .clan-slot {
     border: 2px solid rgba(255, 255, 255, 0.2);
-    min-height: 100px;
+    min-height: 70px; /* Reducido de 100px a 70px */
     transition: all 0.3s ease;
-    margin-bottom: 15px;
+    margin-bottom: 12px; /* Reducido de 15px a 12px */
     position: relative;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px 10px; /* Ajustado el padding vertical */
     background: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
 }
+
+
 
 .clan-slot:hover {
     transform: translateY(-2px);
@@ -841,13 +845,14 @@
 }
 
   
-  .rune-logo {
-    width: 48px;
-    height: 48px;
+ .rune-logo {
+    width: 40px; /* Reducido de 48px */
+    height: 40px; /* Reducido de 48px */
     flex-shrink: 0;
     transition: all 0.3s ease;
     object-fit: contain;
 }
+
 
   
 
@@ -1466,11 +1471,110 @@
 </section>
 
 
+<!-- Sección de Inventario -->
+<section id="inventory" class="py-20 fade-in fade-in-section">
+    <h2 class="text-2xl text-center mb-16 text-glow">INVENTARIO DE BOOSTS</h2>
+    
+    <div class="container mx-auto max-w-7xl">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Inventario del Clan Vega -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/sDGd2hHg/Photo-Room-20250209-163733.png" alt="Vega Logo" class="clan-logo">
+                    <h3 class="text-xl clan-vega clan-name">VEGA</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Arturo -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/C5W28crL/Photo-Room-20250209-163949.png" alt="Arturo Logo" class="clan-logo">
+                    <h3 class="text-xl clan-arturo clan-name">ARTURO</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Sirius -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/3wBzqCNn/Photo-Room-20250209-163858.png" alt="Sirius Logo" class="clan-logo">
+                    <h3 class="text-xl clan-sirius clan-name">SIRIUS</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slot de inventario con item -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+            
+            <!-- Inventario del Clan Antares -->
+            <div class="clan-container fade-in-left">
+                <div class="clan-header">
+                    <img src="https://i.postimg.cc/q7xdTHbc/Photo-Room-20250209-163507.png" alt="Antares Logo" class="clan-logo">
+                    <h3 class="text-xl clan-antares clan-name">ANTARES</h3>
+                </div>
+                
+                <!-- Grid de inventario -->
+                <div class="grid grid-cols-3 gap-3 mt-6">
+                    <!-- Slots vacíos -->
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                    <div class="inventory-slot empty"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</section>
+
+
+
+<!-- CLAN SLOTSSSSSS -->
+
 
     <div class="relative z-10 min-h-screen py-20 px-4">
         <div class="container mx-auto max-w-7xl">
             <section id="clans" class="mb-32 fade-in fade-in-section">
-                <h2 class="text-center text-2xl mb-16 text-glow">CLANES ACTIVOS</h2>
+                <h2 class="text-center text-2xl mb-16 text-glow">INVENTARIO DE RUNAS</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Clan Vega -->
 <div class="clan-container fade-in-left">
@@ -1610,100 +1714,6 @@
 
 
 
-<!-- Sección de Inventario -->
-<section id="inventory" class="py-20 fade-in fade-in-section">
-    <h2 class="text-2xl text-center mb-16 text-glow">INVENTARIO DE BOOSTS</h2>
-    
-    <div class="container mx-auto max-w-7xl">
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Inventario del Clan Vega -->
-            <div class="clan-container fade-in-left">
-                <div class="clan-header">
-                    <img src="https://i.postimg.cc/sDGd2hHg/Photo-Room-20250209-163733.png" alt="Vega Logo" class="clan-logo">
-                    <h3 class="text-xl clan-vega clan-name">VEGA</h3>
-                </div>
-                
-                <!-- Grid de inventario -->
-                <div class="grid grid-cols-3 gap-3 mt-6">
-                    <!-- Slot de inventario con item -->
-                    
-                    <div class="inventory-slot empty"></div>
-                    
-                    <!-- Slots vacíos -->
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                </div>
-            </div>
-            
-            <!-- Inventario del Clan Arturo -->
-            <div class="clan-container fade-in-left">
-                <div class="clan-header">
-                    <img src="https://i.postimg.cc/C5W28crL/Photo-Room-20250209-163949.png" alt="Arturo Logo" class="clan-logo">
-                    <h3 class="text-xl clan-arturo clan-name">ARTURO</h3>
-                </div>
-                
-                <!-- Grid de inventario -->
-                <div class="grid grid-cols-3 gap-3 mt-6">
-                    <!-- Slot de inventario con item -->
-                    <div class="inventory-slot empty"></div>
-                    
-                    <!-- Slots vacíos -->
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                </div>
-            </div>
-            
-            <!-- Inventario del Clan Sirius -->
-            <div class="clan-container fade-in-left">
-                <div class="clan-header">
-                    <img src="https://i.postimg.cc/3wBzqCNn/Photo-Room-20250209-163858.png" alt="Sirius Logo" class="clan-logo">
-                    <h3 class="text-xl clan-sirius clan-name">SIRIUS</h3>
-                </div>
-                
-                <!-- Grid de inventario -->
-                <div class="grid grid-cols-3 gap-3 mt-6">
-                    <!-- Slot de inventario con item -->
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    
-                    <!-- Slots vacíos -->
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                </div>
-            </div>
-            
-            <!-- Inventario del Clan Antares -->
-            <div class="clan-container fade-in-left">
-                <div class="clan-header">
-                    <img src="https://i.postimg.cc/q7xdTHbc/Photo-Room-20250209-163507.png" alt="Antares Logo" class="clan-logo">
-                    <h3 class="text-xl clan-antares clan-name">ANTARES</h3>
-                </div>
-                
-                <!-- Grid de inventario -->
-                <div class="grid grid-cols-3 gap-3 mt-6">
-                    <!-- Slots vacíos -->
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                    <div class="inventory-slot empty"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    
-</section>
 
 <!-- Popup para detalles de items -->
     
@@ -1721,194 +1731,157 @@
             </div>
         </div>
     </div>
+    
+    <!-- SECCIÓN DE BOOSTS-->
+
+<section id="boosts" class="py-20 fade-in fade-in-section">
+    <h2 class="text-2xl text-center mb-16 text-glow">BOOSTS</h2>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+        <!-- Escudo Divino -->
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showItemPopup('divine-shield')">
+            <img src="https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png" alt="Escudo Divino" class="h-32 w-full object-contain rounded mb-4">
+            <h4 class="text-sm mb-2">ESCUDO DIVINO</h4>
+            <p class="coins-display">4 H.COINS</p>
+        </div>
+        
+        <!-- Elección Divina -->
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showItemPopup('divine-choice')">
+            <img src="https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png" alt="Elección Divina" class="h-32 w-full object-contain rounded mb-4">
+            <h4 class="text-sm mb-2">ELECCIÓN DIVINA</h4>
+            <p class="coins-display">2 H.COINS</p>
+        </div>
+        
+        <!-- Rayo Divino -->
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showItemPopup('divine-ray')">
+            <img src="https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png" alt="Rayo Divino" class="h-32 w-full object-contain rounded mb-4">
+            <h4 class="text-sm mb-2">RAYO DIVINO</h4>
+            <p class="coins-display">1 H.COINS</p>
+        </div>
+    </div>
+</section>
+
+    
+    
             <!-- Catálogo de Runas -->
             <section id="catalog" class="py-20 fade-in fade-in-section">
-                <h2 class="text-2xl text-center mb-16 text-glow">CATÁLOGO DE RUNAS</h2>
-                
-             <!-- Runas Azules -->
-<div class="mb-16">
-    <h3 class="text-xl text-blue-400 mb-8">RUNAS AZULES</h3>
+    <h2 class="text-2xl text-center mb-16 text-glow">RUNAS</h2>
+    
     <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Walk Master -->
+        <!-- Walk Master (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('WALK MASTER', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Pasos y Correr', '3', 'https://i.postimg.cc/XJSsNrPt/Photo-Room-20250209-155538.png')">
             <img src="https://i.postimg.cc/XJSsNrPt/Photo-Room-20250209-155538.png" alt="Walk Master" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">WALK MASTER</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
-        <!-- Master of Deepwork -->
+        <!-- Master of Deepwork (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF DEEPWORK', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Deepwork', '3', 'https://i.postimg.cc/G2xfXD5d/Photo-Room-20250209-213612.png')">
             <img src="https://i.postimg.cc/G2xfXD5d/Photo-Room-20250209-213612.png" alt="Master of Deepwork" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF DEEPWORK</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
-        <!-- Master of Chill -->
+        <!-- Master of Chill (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF CHILL', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Meditar', '3', 'https://i.postimg.cc/mDqMrsy9/Photo-Room-20250209-215201.png')">
             <img src="https://i.postimg.cc/mDqMrsy9/Photo-Room-20250209-215201.png" alt="Master of Chill" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF CHILL</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
-        <!-- Master of Reading -->
+        <!-- Master of Reading (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MASTER OF READING', 'Este Boost otorga un +10 Puntos si se supera a Battle Boss en Lectura', '3', 'https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png')">
             <img src="https://i.postimg.cc/vZdLbsGj/Photo-Room-20250209-215846.png" alt="Master of Reading" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MASTER OF READING</h4>
             <p class="coins-display">3 H.COINS</p>
         </div>
 
-        <!-- Super Runner -->
+        <!-- Super Runner (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER RUNNER', 'Si una persona del clan llega a 185k de pasos en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/y89TCLwK/Photo-Room-20250209-220747.png')">
             <img src="https://i.postimg.cc/y89TCLwK/Photo-Room-20250209-220747.png" alt="Super Runner" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">SUPER RUNNER</h4>
             <p class="coins-display">5 H.COINS</p>
         </div>
 
-        <!-- Super Monk -->
+        <!-- Super Monk (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER MONK', 'Si una persona del clan llega a 5h de meditar en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/VvdjGgj3/Photo-Room-20250209-221112.png')">
             <img src="https://i.postimg.cc/VvdjGgj3/Photo-Room-20250209-221112.png" alt="Super Monk" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">SUPER MONK</h4>
             <p class="coins-display">5 H.COINS</p>
         </div>
 
-        <!-- Super Reader -->
+        <!-- Super Reader (Azul) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER READER', 'Si una persona del clan llega a 7h de Leer en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/QxKQc6N7/Photo-Room-20250209-221948.png')">
             <img src="https://i.postimg.cc/QxKQc6N7/Photo-Room-20250209-221948.png" alt="Super Reader" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">SUPER READER</h4>
             <p class="coins-display">5 H.COINS</p>
         </div>
 
-        <!-- Super Worker -->
-        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER WORKER', 'Si una persona del clan llega a 8h de Deepwork en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/0ygpnprB/Photo-Room4-20250209-222256.png')">
+        <!-- Super Worker (Azul) -->
+        <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('SUPER WORKER', 'Si una persona del clan llega a 8h de Deepwork en un día +10 Puntos, si no se logra -10 Puntos', '5', 'https://i.postimg.cc/0ygpnprB/Photo-Room-20250209-222256.png')">
             <img src="https://i.postimg.cc/0ygpnprB/Photo-Room-20250209-222256.png" alt="Super Worker" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">SUPER WORKER</h4>
             <p class="coins-display">5 H.COINS</p>
         </div>
-    </div>
-</div>
 
-                <!-- Runas Rojas -->
-<div class="mb-16">
-    <h3 class="text-xl text-red-400 mb-8">RUNAS ROJAS</h3>
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Hiper Runners Duo -->
+        <!-- Hiper Runners Duo (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('HIPER RUNNERS DUO', 'Si dos personas del clan llegan a 175k de pasos en un día +2 Multi, si no se logra no se ganan puntos (se necesitan pruebas extra).', '8', 'https://i.postimg.cc/SNxgbxzq/Photo-Room-20250210-075434.png')">
             <img src="https://i.postimg.cc/SNxgbxzq/Photo-Room-20250210-075434.png" alt="Hiper Runners Duo" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">HIPER RUNNERS DUO</h4>
             <p class="coins-display">8 H.COINS</p>
         </div>
 
-        <!-- Hiper Monks Duo -->
+        <!-- Hiper Monks Duo (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('HIPER MONKS DUO', 'Si dos personas del clan llegan a 5h de meditar en un día +2 Multi, si no se logra no se ganan puntos.', '8', 'https://i.postimg.cc/QtrBGmSP/Photo-Room-20250210-075807.png')">
             <img src="https://i.postimg.cc/QtrBGmSP/Photo-Room-20250210-075807.png" alt="Hiper Monks Duo" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">HIPER MONKS DUO</h4>
             <p class="coins-display">8 H.COINS</p>
         </div>
 
-        <!-- Hiper Readers Duo -->
+        <!-- Hiper Readers Duo (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('HIPER READERS DUO', 'Si dos personas del clan llegan a 6h de Leer en un día +2 Multi, si no se logra no se ganan puntos.', '8', 'https://i.postimg.cc/nzkrNwTL/Photo-Room-20250210-082021.png')">
             <img src="https://i.postimg.cc/nzkrNwTL/Photo-Room-20250210-082021.png" alt="Hiper Readers Duo" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">HIPER READERS DUO</h4>
             <p class="coins-display">8 H.COINS</p>
         </div>
 
-        <!-- Hiper Working Duo -->
+        <!-- Hiper Working Duo (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('HIPER WORKING DUO', 'Si dos personas del clan llegan a 7h de Deepwork en un día +2 Multi, si no se logra no se ganan puntos.', '8', 'https://i.postimg.cc/50bPg66C/Photo-Room-20250210-083006.png')">
             <img src="https://i.postimg.cc/50bPg66C/Photo-Room-20250210-083006.png" alt="Hiper Working Duo" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">HIPER WORKING DUO</h4>
             <p class="coins-display">8 H.COINS</p>
         </div>
 
-        <!-- Take My Hand And Go Up -->
+        <!-- Take My Hand And Go Up (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('TAKE MY HAND AND GO UP', 'Si el top 4 o 3 tienen una racha de 3 derrotas totales, obtienen +2 Multi.', '10', 'https://i.postimg.cc/3Jnpk9Mp/Photo-Room-20250210-084144.png')">
             <img src="https://i.postimg.cc/3Jnpk9Mp/Photo-Room-20250210-084144.png" alt="Take My Hand And Go Up" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">TAKE MY HAND AND GO UP</h4>
             <p class="coins-display">10 H.COINS</p>
         </div>
 
-        <!-- Never Lose Hope -->
+        <!-- Never Lose Hope (Rojo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('NEVER LOSE HOPE', 'Si el top 4 queda en una batalla en top 2 o 1, obtiene +2 Multi para la siguiente batalla (si es la última, se aplicará de inmediato un +1 Multi).', '15', 'https://i.postimg.cc/C1p5dnm9/Photo-Room-20250210-084801.png')">
             <img src="https://i.postimg.cc/C1p5dnm9/Photo-Room-20250210-084801.png" alt="Never Lose Hope" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">NEVER LOSE HOPE</h4>
             <p class="coins-display">15 H.COINS</p>
         </div>
-    </div>
-</div>
 
-<!-- Runas Amarillas -->
-<div class="mb-16">
-    <h3 class="text-xl text-yellow-400 mb-8">RUNAS AMARILLAS</h3>
-    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
-        <!-- Mr Crab -->
+        <!-- Mr Crab (Amarillo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('MR CRAB', '10 de los puntos de la batalla se convierten en 1 H.Coin', '8', 'https://i.postimg.cc/wTFdmRTn/Photo-Room-20250210-085019.png')">
             <img src="https://i.postimg.cc/wTFdmRTn/Photo-Room-20250210-085019.png" alt="Mr Crab" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">MR CRAB</h4>
             <p class="coins-display">8 H.COINS</p>
         </div>
 
-        <!-- Streak of 2 -->
+        <!-- Streak of 2 (Amarillo) -->
         <div class="rune-card p-4 rounded cursor-pointer" onclick="showPopup('STREAK OF 2', '2 H.Coins si el top 1 hace una racha de 2 batallas ganadas', '9', 'https://i.postimg.cc/0jRVWvPL/Photo-Room-20250210-085429.png')">
             <img src="https://i.postimg.cc/0jRVWvPL/Photo-Room-20250210-085429.png" alt="Streak of 2" class="h-32 w-full object-contain rounded mb-4">
             <h4 class="text-sm mb-2">STREAK OF 2</h4>
             <p class="coins-display">9 H.COINS</p>
         </div>
     </div>
-</div>
 </section>
-
-<section id="boosts">
-<div class="mb-16 fade-in-section">
-    <h2 class="text-2xl text-center mb-16 text-glow">BOOSTS</h2>
-    
-    <div class="design-slider">
-        <div class="slider-content">
-            <div class="slider-item active">
-                <div class="slider-text">
-                    <h2 class="text-3xl font-bold mb-4">ESCUDO DIVINO</h2>
-                    <p class="text-gray-300 mb-8">Te protege de quedar en cuarto lugar, como mínimo te dejará con los mismos puntos que el 3er lugar.</p>
-                    <div class="coins-display">4 H.COINS</div>
-                </div>
-                <div class="slider-image">
-                    <img src="https://i.postimg.cc/k538Bw8s/Photo-Room-20250212-205529.png" alt="Escudo Divino" class="h-64 object-contain">
-                </div>
-            </div>
-            
-            <div class="slider-item">
-                <div class="slider-text">
-                    <h2 class="text-3xl font-bold mb-4">ELECCIÓN DIVINA</h2>
-                    <p class="text-gray-300 mb-8">Te da la oportunidad de elegir la temática de la próxima competición. Piénsalo bien.</p>
-                    <div class="coins-display">2 H.COINS</div>
-                </div>
-                <div class="slider-image">
-                    <img src="https://i.postimg.cc/jqz15k7g/Photo-Room-20250212-210011.png" alt="Elección Divina" class="h-64 object-contain">
-                </div>
-            </div>
-            
-            <div class="slider-item">
-                <div class="slider-text">
-                    <h2 class="text-3xl font-bold mb-4">RAYO DIVINO</h2>
-                    <p class="text-gray-300 mb-8">Se activa un evento en el que aleatoriamente a un clan le cae un rayo y se le descuentan X cantidad de puntos de su contador.</p>
-                    <div class="coins-display">1 H.COIN</div>
-                </div>
-                <div class="slider-image">
-                    <img src="https://i.postimg.cc/MGQDLv0P/Photo-Room-20250215-213659.png" alt="Rayo Divino" class="h-64 object-contain">
-                </div>
-            </div>
-        </div>
-        
-        <div class="slider-controls">
-            <button class="slider-button prev">&lt;</button>
-            <button class="slider-button next">&gt;</button>
-        </div>
-    </div>
-</div>
-
-
-    </div>
-</div>
-</div>
-</div>
-</section>
+                 
 <script>
 // Parallax suave
 let lastScrollTop = 0;
@@ -2121,114 +2094,6 @@ function initFadeAnimations() {
 document.addEventListener('DOMContentLoaded', initFadeAnimations);
 </script>
 
-<script>
-    <!-- JS DE LOS FX DEL CARRUSEL DE BOOSTS 3D-->
-    
-    document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.querySelector('.design-slider');
-    const items = document.querySelectorAll('.slider-item');
-    const prevBtn = document.querySelector('.slider-button.prev');
-    const nextBtn = document.querySelector('.slider-button.next');
-    let currentIndex = 0;
-    let autoPlayInterval;
-
-    // Crear dots
-    const dotsContainer = document.createElement('div');
-    dotsContainer.className = 'slider-dots';
-    items.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = `slider-dot ${index === 0 ? 'active' : ''}`;
-        dot.addEventListener('click', () => goToSlide(index));
-        dotsContainer.appendChild(dot);
-    });
-    slider.appendChild(dotsContainer);
-
-    function updateSlider() {
-        items.forEach((item, index) => {
-            item.classList.remove('active');
-            if (index === currentIndex) {
-                item.classList.add('active');
-            }
-        });
-
-        // Actualizar dots
-        document.querySelectorAll('.slider-dot').forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    function goToSlide(index) {
-        currentIndex = index;
-        updateSlider();
-        resetAutoPlay();
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateSlider();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        updateSlider();
-    }
-
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(nextSlide, 10000);
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-    }
-
-    prevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetAutoPlay();
-    });
-
-    nextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetAutoPlay();
-    });
-
-    // Hover pause
-    slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-    slider.addEventListener('mouseleave', startAutoPlay);
-
-    // Touch events
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    slider.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
-    });
-
-    slider.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        const diff = touchStartX - touchEndX;
-
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-            resetAutoPlay();
-        }
-    }
-
-    // Inicializar
-    updateSlider();
-    startAutoPlay();
-});
-
-</script>
 
  
 <script>
